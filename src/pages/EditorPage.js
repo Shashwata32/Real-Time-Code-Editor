@@ -139,11 +139,11 @@ const EditorPage = () => {
 
     const options = {
       method: "POST",
-      url: "https://judge029.p.rapidapi.com/submissions/1df59684-e5e7-4ce1-9975-ff732823e37e",
+      url: 'https://judge029.p.rapidapi.com/submissions/1df59684-e5e7-4ce1-9975-ff732823e37e',
       headers: {
-        "content-type": "application/x-www-form-urlencoded",
-        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
-        "X-RapidAPI-Host": "judge029.p.rapidapi.com",
+        // "content-type": "application/x-www-form-urlencoded",
+        'x-rapidapi-key': 'f86444e084mshd1621a807ddfd0dp107818jsn7d60d0b2d32a',
+        'x-rapidapi-host': 'judge029.p.rapidapi.com'
       },
       data: encodedParams,
     };
