@@ -298,6 +298,7 @@ footer a:hover {
 } */
 
 /* Modern UI Styles for CodeSync */
+/* Modern UI Styles for CodeSync - FIXED LAYOUT */
 :root {
   --primary: #6366f1;
   --primary-dark: #4f46e5;
@@ -333,7 +334,7 @@ body {
   overflow: hidden;
 }
 
-/* Main Layout */
+/* Main Layout - FIXED PROPORTIONS */
 .mainWrap {
   display: flex;
   height: 100vh;
@@ -343,7 +344,7 @@ body {
   gap: 0;
 }
 
-/* Sidebar - Modern Redesign */
+/* Sidebar */
 .asideWrap {
   display: flex;
   background: linear-gradient(180deg, var(--surface) 0%, #1a2332 100%);
@@ -474,7 +475,7 @@ body {
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-/* Buttons */
+/* Buttons - FIXED FUNCTIONALITY */
 .btn {
   border: none;
   padding: 14px 20px;
@@ -542,7 +543,7 @@ body {
   box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
 }
 
-/* Editor Area */
+/* Editor Area - IMPROVED PROPORTIONS */
 .editorWrap {
   display: flex;
   flex-direction: column;
@@ -550,15 +551,29 @@ body {
   padding: 20px;
   background: var(--background);
   min-width: 0;
+  gap: 15px;
 }
 
 .editorContainer {
-  flex: 1;
+  flex: 3; /* 75% of space */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   border: 1px solid var(--border);
   background: var(--surface);
+  min-height: 0; /* Important for flex child */
+}
+
+.ioSection {
+  flex: 1; /* 25% of space */
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  min-height: 0;
 }
 
 /* IO Container */
@@ -569,6 +584,7 @@ body {
 }
 
 .IO-container label {
+  flex: 1;
   padding: 15px 25px;
   text-align: center;
   font-size: 0.9rem;
@@ -594,7 +610,7 @@ body {
   color: var(--text-muted);
 }
 
-/* Text Areas */
+/* Text Areas - BETTER PROPORTIONS */
 .textarea-style {
   font-family: 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
   font-size: 14px;
@@ -606,14 +622,16 @@ body {
   resize: none;
   outline: none;
   width: 100%;
+  min-height: 0;
 }
 
 .inputArea {
-  height: 200px;
-  border-top: 1px solid var(--border);
+  flex: 1;
+  height: 100%;
+  border: none;
 }
 
-/* Chat Area */
+/* Chat Area - FIXED FUNCTIONALITY */
 .chatWrap {
   display: flex;
   flex-direction: column;
@@ -644,6 +662,7 @@ body {
   padding: 20px;
   background: transparent;
   border: none;
+  min-height: 0;
 }
 
 .sendChatWrap {
@@ -811,6 +830,29 @@ body {
   border-bottom-color: var(--primary);
 }
 
+/* CodeMirror Customization */
+.CodeMirror {
+  font-family: 'Fira Code', 'Monaco', 'Cascadia Code', monospace !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  height: 100% !important;
+  background: var(--surface) !important;
+  color: var(--text-primary) !important;
+}
+
+.CodeMirror-gutters {
+  background: var(--surface-light) !important;
+  border-right: 1px solid var(--border) !important;
+}
+
+.CodeMirror-linenumber {
+  color: var(--text-muted) !important;
+}
+
+.CodeMirror-cursor {
+  border-left: 2px solid var(--primary) !important;
+}
+
 /* Scrollbars */
 .textarea-style::-webkit-scrollbar {
   width: 8px;
@@ -827,25 +869,6 @@ body {
 
 .textarea-style::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
-}
-
-/* CodeMirror Customization */
-.CodeMirror {
-  font-family: 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
-  font-size: 14px;
-  line-height: 1.5;
-  height: 100%;
-  background: var(--surface) !important;
-  color: var(--text-primary) !important;
-}
-
-.CodeMirror-gutters {
-  background: var(--surface-light) !important;
-  border-right: 1px solid var(--border) !important;
-}
-
-.CodeMirror-linenumber {
-  color: var(--text-muted) !important;
 }
 
 /* Responsive Design */
