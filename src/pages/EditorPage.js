@@ -233,22 +233,131 @@ const runCode = () => {
     }
   };
 
-  return (
-    <div className="mainWrap">
-      <div className="asideWrap">
-        <div className="asideInner">
-          <div className="logo">
-            <img className="logoImage" src="/code-sync.png" alt="logo" />
-          </div>
-          <h3>Connected</h3>
+//   return (
+//     <div className="mainWrap">
+//       <div className="asideWrap">
+//         <div className="asideInner">
+//           <div className="logo">
+//             <img className="logoImage" src="/code-sync.png" alt="logo" />
+//           </div>
+//           <h3>Connected</h3>
+//           <div className="clientsList">
+//             {clients.map((client) => (
+//               <Client key={client.socketId} username={client.username} />
+//             ))}
+//           </div>
+//         </div>
+//         <label>
+//           Select Language:
+//           <select id="languageOptions" className="seLang" defaultValue="17">
+//             <option value="1">C#</option>
+//             <option value="4">Java</option>
+//             <option value="5">Python</option>
+//             <option value="6">C (gcc)</option>
+//             <option value="7">C++ (gcc)</option>
+//             <option value="8">PHP</option>
+//             <option value="11">Haskell</option>
+//             <option value="12">Ruby</option>
+//             <option value="13">Perl</option>
+//             <option value="17">Javascript</option>
+//             <option value="20">Golang</option>
+//             <option value="21">Scala</option>
+//             <option value="37">Swift</option>
+//             <option value="38">Bash</option>
+//             <option value="43">Kotlin</option>
+//             <option value="60">TypeScript</option>
+//           </select>
+//         </label>
+//         <button className="btn runBtn" onClick={runCode}>
+//           Run Code
+//         </button>
+//         <button className="btn copyBtn" onClick={copyRoomId}>
+//           Copy ROOM ID
+//         </button>
+//         <button className="btn leaveBtn" onClick={leaveRoom}>
+//           Leave
+//         </button>
+//       </div>
+
+//       <div className="editorWrap">
+//         <Editor
+//           socketRef={socketRef}
+//           roomId={roomId}
+//           onCodeChange={(code) => {
+//             codeRef.current = code;
+//           }}
+//         />
+//         <div className="IO-container">
+//           <label
+//             id="inputLabel"
+//             className="clickedLabel"
+//             onClick={inputClicked}
+//           >
+//             Input
+//           </label>
+//           <label
+//             id="outputLabel"
+//             className="notClickedLabel"
+//             onClick={outputClicked}
+//           >
+//             Output
+//           </label>
+//         </div>
+//         <textarea
+//           id="input"
+//           className="inputArea textarea-style"
+//           placeholder="Enter your input here"
+//         ></textarea>
+//       </div>
+
+//       <div className="chatWrap">
+//         <textarea
+//           id="chatWindow"
+//           className="chatArea textarea-style"
+//           placeholder="Chat messages will appear here"
+//           disabled
+//         ></textarea>
+//         <div className="sendChatWrap">
+//           <input
+//             id="inputBox"
+//             type="text"
+//             placeholder="Type your message here"
+//             className="inputField"
+//             onKeyUp={handleInputEnter}
+//           ></input>
+//           <button className="btn sendBtn" onClick={sendMessage}>
+//             Send
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// In the return section of EditorPage.js, update the JSX structure:
+
+return (
+  <div className="mainWrap">
+    <div className="asideWrap">
+      <div className="asideInner">
+        <div className="logo">
+          <img className="logoImage" src="/code-sync.png" alt="logo" />
+          <h1>CodeSync</h1>
+        </div>
+        
+        <div className="clientsSection">
+          <h3>Connected Users</h3>
           <div className="clientsList">
             {clients.map((client) => (
               <Client key={client.socketId} username={client.username} />
             ))}
           </div>
         </div>
-        <label>
-          Select Language:
+      </div>
+
+      <div className="controlsSection">
+        <div className="controlGroup">
+          <label>Programming Language</label>
           <select id="languageOptions" className="seLang" defaultValue="17">
             <option value="1">C#</option>
             <option value="4">Java</option>
@@ -259,7 +368,7 @@ const runCode = () => {
             <option value="11">Haskell</option>
             <option value="12">Ruby</option>
             <option value="13">Perl</option>
-            <option value="17">Javascript</option>
+            <option value="17">JavaScript</option>
             <option value="20">Golang</option>
             <option value="21">Scala</option>
             <option value="37">Swift</option>
@@ -267,19 +376,22 @@ const runCode = () => {
             <option value="43">Kotlin</option>
             <option value="60">TypeScript</option>
           </select>
-        </label>
-        <button className="btn runBtn" onClick={runCode}>
-          Run Code
+        </div>
+
+        <button className="btn runBtn">
+          <span>▶</span> Run Code
         </button>
-        <button className="btn copyBtn" onClick={copyRoomId}>
-          Copy ROOM ID
+        <button className="btn copyBtn">
+          <span>📋</span> Copy Room ID
         </button>
-        <button className="btn leaveBtn" onClick={leaveRoom}>
-          Leave
+        <button className="btn leaveBtn">
+          <span>🚪</span> Leave Room
         </button>
       </div>
+    </div>
 
-      <div className="editorWrap">
+    <div className="editorWrap">
+      <div className="editorContainer">
         <Editor
           socketRef={socketRef}
           roomId={roomId}
@@ -309,29 +421,33 @@ const runCode = () => {
           placeholder="Enter your input here"
         ></textarea>
       </div>
+    </div>
 
-      <div className="chatWrap">
-        <textarea
-          id="chatWindow"
-          className="chatArea textarea-style"
-          placeholder="Chat messages will appear here"
-          disabled
-        ></textarea>
-        <div className="sendChatWrap">
-          <input
-            id="inputBox"
-            type="text"
-            placeholder="Type your message here"
-            className="inputField"
-            onKeyUp={handleInputEnter}
-          ></input>
-          <button className="btn sendBtn" onClick={sendMessage}>
-            Send
-          </button>
-        </div>
+    <div className="chatWrap">
+      <div className="chatHeader">
+        <h3>💬 Room Chat</h3>
+      </div>
+      <textarea
+        id="chatWindow"
+        className="chatArea textarea-style"
+        placeholder="Chat messages will appear here..."
+        disabled
+      ></textarea>
+      <div className="sendChatWrap">
+        <input
+          id="inputBox"
+          type="text"
+          placeholder="Type your message..."
+          className="inputField"
+          onKeyUp={handleInputEnter}
+        ></input>
+        <button className="btn sendBtn">
+          Send
+        </button>
       </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default EditorPage;
