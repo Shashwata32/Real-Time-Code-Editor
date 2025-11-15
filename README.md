@@ -8,7 +8,7 @@
 - **Multi-Language Support:** Write code in several popular programming languages.
 - **Syntax Highlighting:** Intuitive editor with professional syntax highlighting for readability.
 - **User-Friendly Interface:** Clean design focused on productivity and usability.
-- **Session Sharing:** Easily share coding sessions via links for instant collaboration.
+- **Session Sharing:** Easily share coding sessions by sharing room IDs for instant collaboration.
 
 ## Getting Started
 
@@ -21,8 +21,8 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Shashwata32/Real-Time-Code-Editor.git
-   cd Real-Time-Code-Editor
+   git clone https://github.com/Shashwata32/CodeJam.git
+   cd CodeJam
    ```
 
 2. **Install dependencies:**
