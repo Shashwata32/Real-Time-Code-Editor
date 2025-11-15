@@ -1,6 +1,6 @@
-# Real-Time Code Editor
+# CodeJam
 
-**Real-Time Code Editor** is a collaborative coding platform for developers to write, edit, and share code with others simultaneously. It provides an in-browser code editing experience with live synchronization, making remote pair programming, code reviews, and team collaboration seamless.
+**CodeJam** is a collaborative coding platform for developers to write, edit, and share code with others simultaneously. It provides an in-browser code editing experience with live synchronization, making remote pair programming, code reviews, and team collaboration seamless.
 
 ## Key Features & Benefits
 

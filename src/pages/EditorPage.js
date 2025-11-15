@@ -261,7 +261,7 @@ const EditorPage = () => {
         <div className="asideInner">
           <div className="logo">
             
-            <h1>CodeSync</h1>
+            <h1>CodeJam</h1>
           </div>
           
           <div className="clientsSection">
@@ -298,13 +298,13 @@ const EditorPage = () => {
           </div>
 
           <button className="btn runBtn" onClick={runCode}>
-            <span>▶</span> Run Code
+             Run Code
           </button>
           <button className="btn copyBtn" onClick={copyRoomId}>
-            <span>📋</span> Copy Room ID
+            Copy Room ID
           </button>
           <button className="btn leaveBtn" onClick={leaveRoom}>
-            <span>🚪</span> Leave Room
+             Leave Room
           </button>
         </div>
       </div>
@@ -346,7 +346,7 @@ const EditorPage = () => {
 
       <div className="chatWrap">
         <div className="chatHeader">
-          <h3>💬 Room Chat</h3>
+          <h3>Room Chat</h3>
         </div>
         <textarea
           id="chatWindow"
