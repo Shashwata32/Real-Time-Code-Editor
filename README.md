@@ -48,7 +48,7 @@ Begin a coding session by creating a new file, choosing your language, and shari
 ## Maintainers & Contributions
 
 - **Maintainer:** [@Shashwata32](https://github.com/Shashwata32)
-- **Contributing:** Please see [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md) for how to contribute, code standards, and submitting pull requests.
+- **Contributing:** If you are interested in contributing please submit a pull request
 
 ---
 
